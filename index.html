@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0f1217">
+  <title>maria open CHESS</title>
+  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+
+  <!-- Peças do tabuleiro (desenho próprio do maria open CHESS) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="def-P"><circle cx="22.5" cy="13" r="5.2"/><path d="M17.3 21.5h10.4l-1.3 3.3c3 1.5 5 4.6 5 8.2V35H13.6v-2c0-3.600 2-6.700 5-8.200z"/><path d="M12.5 35h20v4h-20z"/></g>
+      <g id="def-R"><path d="M12.500 39v-4h20v4z"/><path d="M15 35l1.400-12.500h12.200L30 35z"/><path d="M14 22.500v-4h17v4z"/><path d="M13.500 18.500V9h4v3h3.500V9h3v3H27V9h4v9.500z"/></g>
+      <g id="def-N"><path d="M13 39c0-9 1.500-13.500 6.500-17-3 .2-5 1.500-7.500 3.800L9.500 23.500C12 17.500 15 11.500 21 9l1.400-3.500 3.300 2.600C32 9 36 14.500 36 24c0 5-1 10-1 15z"/><circle class="eye" cx="21.500" cy="15.500" r="1.500"/><path class="stroke-only" d="M26.500 12.500c3 2 5 6 5 11"/></g>
+      <g id="def-B"><path d="M12.500 39v-3.500c2.600 0 4.300-1 5.800-2.700h8.400c1.500 1.700 3.200 2.700 5.800 2.700V39z"/><path d="M22.500 8.500c3.200 3.100 7.500 7 7.500 13 0 4.200-2.700 7.300-4.700 10.300h-5.600c-2-3-4.700-6.100-4.700-10.300 0-6 4.300-9.900 7.500-13z"/><circle cx="22.500" cy="7" r="2.700"/><path class="stroke-only" d="M19.300 20.500h6.400M22.500 17.300v6.400"/></g>
+      <g id="def-Q"><path d="M11.500 39v-4c3-1 4.200-4 4.200-7.500L10.300 14l7.200 6 2.200-10.500 2.800 9 2.800-9L27.500 20l7.200-6-5.400 13.500c0 3.500 1.200 6.500 4.200 7.500v4z"/><circle cx="10" cy="12.500" r="2.300"/><circle cx="17" cy="7.500" r="2.300"/><circle cx="28" cy="7.500" r="2.300"/><circle cx="35" cy="12.500" r="2.300"/></g>
+      <g id="def-K"><path d="M21 3.500h3v3h3v3h-3v3h-3v-3h-3v-3h3z"/><path d="M22.500 13c-6.500 0-10.500 3.200-10.500 8 0 3.200 2 5.300 4.200 7.200-2.300 2-4.200 3.900-4.200 7V39h21v-3.800c0-3.100-1.900-5-4.200-7 2.200-1.900 4.200-4 4.200-7.200 0-4.800-4-8-10.500-8z"/><path class="stroke-only" d="M16.500 28.500h12"/></g>
+    </defs>
+  </svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="w-P" viewBox="0 0 45 45"><use href="#def-P"/></symbol><symbol id="b-P" viewBox="0 0 45 45"><use href="#def-P"/></symbol>
+      <symbol id="w-R" viewBox="0 0 45 45"><use href="#def-R"/></symbol><symbol id="b-R" viewBox="0 0 45 45"><use href="#def-R"/></symbol>
+      <symbol id="w-N" viewBox="0 0 45 45"><use href="#def-N"/></symbol><symbol id="b-N" viewBox="0 0 45 45"><use href="#def-N"/></symbol>
+      <symbol id="w-B" viewBox="0 0 45 45"><use href="#def-B"/></symbol><symbol id="b-B" viewBox="0 0 45 45"><use href="#def-B"/></symbol>
+      <symbol id="w-Q" viewBox="0 0 45 45"><use href="#def-Q"/></symbol><symbol id="b-Q" viewBox="0 0 45 45"><use href="#def-Q"/></symbol>
+      <symbol id="w-K" viewBox="0 0 45 45"><use href="#def-K"/></symbol><symbol id="b-K" viewBox="0 0 45 45"><use href="#def-K"/></symbol>
+    </defs>
+  </svg>
+
+  <div id="app"></div>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+  <noscript><p style="padding:2rem">O maria open CHESS precisa de JavaScript ativado no navegador.</p></noscript>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

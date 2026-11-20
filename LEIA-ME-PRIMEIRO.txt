@@ -1,0 +1,5 @@
+Abra android/LEIAME-ANDROID.md. Resumo:
+1) node android/scripts/prepare.js   (baixa libnode e sql.js; precisa de internet)
+2) Abra a pasta "android" no Android Studio e rode no celular, ou: cd android && ./gradlew assembleDebug
+
+AVISO: este projeto nunca foi compilado nem testado em um Android.

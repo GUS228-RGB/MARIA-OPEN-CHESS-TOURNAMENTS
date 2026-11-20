@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">maria open CHESS</string>
+    <string name="channel_name">Torneio em andamento</string>
+    <string name="channel_desc">Mantém o servidor do torneio ativo enquanto você hospeda.</string>
+    <string name="notif_idle_title">maria open CHESS</string>
+    <string name="notif_idle_text">Pronto para criar um torneio</string>
+    <string name="notif_action_open">Abrir</string>
+    <string name="notif_action_quit">Encerrar</string>
+    <string name="loading">Preparando o servidor…\nNa primeira vez isso pode levar alguns segundos.</string>
+    <string name="error_title">Não foi possível iniciar</string>
+    <string name="retry">Tentar de novo</string>
+    <string name="battery_title">Manter o torneio ativo</string>
+    <string name="battery_message">Para o Android não pausar o servidor quando a tela apagar, permita que o aplicativo ignore a economia de bateria. Na tela que vai abrir, procure por “maria open CHESS” e escolha “Sem restrições” (ou “Não otimizar”).</string>
+    <string name="battery_open">Abrir configurações</string>
+    <string name="battery_later">Agora não</string>
+    <string name="download_saved">Salvo em Downloads: %1$s</string>
+    <string name="download_saved_app">Salvo em: %1$s</string>
+    <string name="download_failed">Não foi possível baixar o arquivo.</string>
+</resources>
