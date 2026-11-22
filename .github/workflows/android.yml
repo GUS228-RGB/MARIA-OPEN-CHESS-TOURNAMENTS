@@ -9,6 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Localizar a pasta do projeto
+        run: |
+          P=$(find . -path '*/android/scripts/prepare.js' -not -path '*/node_modules/*' | head -1)
+          if [ -z "$P" ]; then
+            echo "ERRO: nao encontrei android/scripts/prepare.js no repositorio. Arquivos encontrados:"
+            find . -maxdepth 3 -not -path './.git*' | head -60
+            exit 1
+          fi
+          ROOT=$(cd "$(dirname "$P")/../.." && pwd)
+          echo "Projeto em: $ROOT"
+          ls "$ROOT"
+          echo "ROOT=$ROOT" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -22,14 +34,18 @@ jobs:
           yes | "$SDKM" --licenses > /dev/null || true
           "$SDKM" "platforms;android-35" "build-tools;35.0.0" "cmake;3.22.1" "ndk;27.0.12077973"
       - name: Testes do código JavaScript
+        working-directory: ${{ env.ROOT }}
         run: npm test
       - name: Baixar libnode e sql.js
+        working-directory: ${{ env.ROOT }}
         run: node android/scripts/prepare.js
       - uses: gradle/actions/setup-gradle@v4
       - name: Compilar o APK (debug)
-        working-directory: android
+        working-directory: ${{ env.ROOT }}/android
         run: ./gradlew assembleDebug --stacktrace
+      - name: Copiar o APK
+        run: mkdir -p apk-saida && cp "$ROOT/android/app/build/outputs/apk/debug/app-debug.apk" apk-saida/
       - uses: actions/upload-artifact@v4
         with:
           name: maria-open-chess-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: apk-saida/app-debug.apk
